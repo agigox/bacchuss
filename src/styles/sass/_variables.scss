@@ -1,0 +1,51 @@
+@use '../fonts/fonts.scss';
+//
+// Variables
+// --------------------------------------------------
+// Default variable overrides
+$body-bg: #fff;
+$body-color: #000;
+$link-color: rgba(0, 169, 227, 1);
+// colors
+$bac-blue: rgba(0, 156, 223, 1);
+$bac-white: rgba(255, 255, 255, 1);
+$white-rak: #FFFFFF;
+$christmas-silver-rak: #E0E0E0;
+$black-rak: #000000;
+$black-wash: #0D0D0D;
+$cerebral-grey-rak: #CCCCCC;
+$lead-rak: #212121;
+$winters-day: #dff5ff;
+$vanadyl-blue: #09A0E1;
+// fonts
+$font-family-open: 'Open Sans', sans-serif !default;
+$font-family-inter: 'Inter', sans-serif !default;
+// Default variable overrides
+$body-bg: #fff;
+$body-color: $black-rak;
+
+
+// buttons
+$btn-border-width: 0;
+$bg-search: rgba(242, 242, 242, 1);
+$bg-search-hover: rgba(242, 242, 242, 0.9);
+$btn-carte: rgba(47, 128, 237, 1);
+$color-search: #11161a;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1920px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1920px,
+  xxl: 4100px
+);
+
+$bac--blueHovering: rgba(63, 81, 181, 1);

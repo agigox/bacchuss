@@ -1,0 +1,29 @@
+@import './sass/variables';
+@import '~bootstrap/scss/bootstrap';
+
+
+@import './sass/mixins';
+@import './sass/root';
+@import './sass/buttons';
+@import './sass/containers';
+@import './sass/grid';
+@import './sass/utilities';
+@import './sass/common';
+
+body {
+  margin: 0;
+  font-family: $font-family-inter;
+  color: $body-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: 400;
+  min-width: 320px;
+}
+#error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

@@ -1,0 +1,20 @@
+@use './variables';
+
+.btn-bac-primary {
+  background-color: $bac-white;
+  color: $bac-blue;
+  border-radius: 2px;
+  font-family: $font-family-open;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid $bac-blue;
+  padding: 12px 16px;
+
+  &:disabled {
+    background-color: $christmas-silver-rak !important;
+    color: $white-rak !important;
+  }
+}

@@ -1,0 +1,20 @@
+.navbar-row {
+  font-size: 12px;
+}
+.percent-pie {
+  color: $bac--blueHovering;
+  font-weight: 600;
+  line-height: 32px;
+  font-size: 20px;
+}
+.pie-label {
+  color: $bac--blueHovering;
+  font-size: 13px;
+  font-weight: 400;
+}
+.modal-content {
+  border-radius: 0;
+}
+.recharts-sector:focus {
+  outline: none;
+}
