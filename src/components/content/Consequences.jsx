@@ -27,7 +27,7 @@ const Consequences = () => {
       <Row className='consequences-row-1'>
         <Col className="dash-1">
           <Dash title="Conséquences Anomalies">
-            <BacPieChart data={dataPieC} colors={pieColorsC} miniSize={true} />
+            <BacPieChart data={dataPieC} colors={pieColorsC} />
           </Dash>
         </Col>
         <Col className="dash-1">
