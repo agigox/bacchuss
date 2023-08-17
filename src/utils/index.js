@@ -1,5 +1,7 @@
-export const sumScores = (arr) => {
-    const result = arr.map((x) => x).reduce((acc, val) => {
+import _ from "lodash";
+export const sumData = (arr) => {
+   const clonedData = _.cloneDeep(arr);   
+    const result = clonedData.reduce((acc, val) => {
        Object.keys(val).forEach(key => {
           if(key !== 'Centre'){
              acc[key] += val[key];
@@ -11,4 +13,5 @@ export const sumScores = (arr) => {
        return acc;
     });
     return result;
+    
  };
