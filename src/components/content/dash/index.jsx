@@ -7,7 +7,7 @@ const StyledRow = styled(Row)`
     background: var(--bac-widgetBackground);
     padding: 24px;
     &.dash-row {
-        row-gap: 32px;
+        margin: 10px;
         .dash-title {
             color: var(--bac-grayText);
             font-size: 24px;

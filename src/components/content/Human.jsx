@@ -20,26 +20,28 @@ import {
 const StyledContainer = styled(Container)`
   .human-row-1 {
     margin-bottom: 15px;
-    column-gap: 16px;
-    & > .dash-1,
-    & > .dash-2 {
-      flex-basis: calc(50% - 8px);
-    }
+    // column-gap: 16px;
+    flex-wrap: wrap;
+    // & > .dash-1,
+    // & > .dash-2 {
+    //   flex-basis: calc(50% - 8px);
+    // }
   }
   .human-row-2 {
-    column-gap: 16px;
-    & > .dash-1,
-    & > .dash-2,
-    & > .dash-3 {
-      flex-basis: calc(33.3333% - 10.6666px);
-    }
+    // column-gap: 16px;
+    flex-wrap: wrap;
+    // & > .dash-1,
+    // & > .dash-2,
+    // & > .dash-3 {
+    //   flex-basis: calc(33.3333% - 10.6666px);
+    // }
   }
 `;
 
 const Human = () => {
   return (
     <StyledContainer>
-      <Row className="human-row-1">
+      <Row className="human-row-1" noGutters>
         <Col md="6" className="dash-1">
           <Dash title="Répartitions Anomalies FM par centres">
             <BacTable
@@ -58,8 +60,8 @@ const Human = () => {
           </Dash>
         </Col>
       </Row>
-      <Row className="human-row-2">
-        <Col md="4" sm="12">
+      <Row className="human-row-2" noGutters>
+        <Col className="dash-3" md="4" sm="12">
           <Dash title="Anomalies FM HT">
             <BacPieChart
               data={dataFMHT}
@@ -71,7 +73,7 @@ const Human = () => {
             />
           </Dash>
         </Col>
-        <Col md="4" sm="12">
+        <Col className="dash-3" md="4" sm="12">
           <Dash title="Anomalies FM BT">
             <BacPieChart
               data={dataFMBT}
@@ -83,7 +85,7 @@ const Human = () => {
             />
           </Dash>
         </Col>
-        <Col md="4" sm="12">
+        <Col className="dash-3" md="4" sm="12">
           <Dash title="Anomalies FM NS">
             <BacPieChart
               data={dataFMNS}
