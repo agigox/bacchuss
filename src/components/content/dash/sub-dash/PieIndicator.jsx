@@ -28,7 +28,7 @@ const StyledRow = styled(Row)`
   }
 `;
 const FADE_INTERVAL_MS = 2000;
-const PieIndicator = ({item, color}) => {
+const PieIndicator = ({item, color, displayValue}) => {
   const {name, value} = item;
   const [fadeProp, setFadeProp] = useState('fade-in');
   useEffect(() => {
@@ -47,7 +47,7 @@ const PieIndicator = ({item, color}) => {
       <Col className="pie-indicator-2 pie-label">
       {name}
       </Col>
-      {value && <Col className="pie-indicator-3  pie-label">
+      {displayValue && value && <Col className="pie-indicator-3  pie-label">
       {value.toLocaleString() }
       </Col>}
     </StyledRow>
