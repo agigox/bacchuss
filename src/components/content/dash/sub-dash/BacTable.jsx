@@ -33,13 +33,20 @@ const BacTable = ({data, dataHead}) => {
       </thead>
       <tbody>
         
-          {data.map((elt, index) => (
-            <tr key={index} className={index === data.length - 1 ? 'total-cell' : ''}>
+          {data.map((elt, index) => {
+            const isLast = index === data.length - 1;
+            return (
+            <tr key={index} className={isLast ? 'total-cell' : ''}>
+              
               {Object.keys(elt).map((keyName, keyIndex) => {
-                return <td key={keyIndex}>{elt[keyName]}</td>
+                return (
+                <td key={keyIndex}>
+                  {keyName === 'ratio' ? `${((isLast ? (elt['NB_ANO'] / elt['NB_EQF']) : elt[keyName]) * 100).toFixed(1)}%` : elt[keyName]}
+                </td>
+                )
               })}
             </tr>
-          ))}
+          )})}
       </tbody>
     </Table>
       </Col>
