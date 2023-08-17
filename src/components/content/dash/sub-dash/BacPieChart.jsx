@@ -53,7 +53,7 @@ const BacPieChart = ({
       minisize={miniSize}
     >
       <Col className="pie-chart-item-1">
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width={miniSize ? 204 : 340} height={miniSize ? 204 : 340}>
           <PieChart>
             <Pie
               data={data}
@@ -63,13 +63,14 @@ const BacPieChart = ({
               label={(props) =>
                 displayLabel ? renderCustomizedLabel(props, colors) : null
               }
-              outerRadius={miniSize ? "60%" : "80%"}
-              innerRadius={miniSize ? "40%" : "50%"}
+              outerRadius={miniSize ? 102 : 137}
+              innerRadius={miniSize ? 60 : 90}
               startAngle={90}
               endAngle={450}
               paddingAngle={0}
               fill="#8884d8"
               dataKey="value"
+              
             >
               {data.map((entry, index) => (
                 <Cell
