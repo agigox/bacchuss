@@ -521,3 +521,120 @@ export const dataAno = [
     {Centre:"Toulouse", CLOSEIN: 0, CLOSETR: 4, NOCLOSE: 7, NOOPEN: 1, OPENIN: 54, OPENTR: 2, WITHOUTCONSQ: 9},
   ];
   export const dataTableHeadC = ["Centres", "Fermeture intempestive", "Fermeture tardive", "Non fermeture", "Non ouverture", "Ouverture intempestive", "Ouverture tardive", "Sans conséquence"];
+
+
+  export const pieColorsFM = [
+    "#009CDF",
+    "#E675D4",
+    "#F0594A",
+    "#7AE6ED",
+    "#4DA466",
+    "#9D50FF",
+    "#3F51B5",
+    "#FBA23A",
+  ];
+  
+  export const dataFMHT = [
+    {
+      name: "Correctif non appliqué",
+      value: 9000,
+    },
+    {
+      name: "Technologique",
+      value: 4007,
+    },
+    {
+      name: "Non analysée",
+      value: 2707,
+    },
+    {
+      name: "Sans conclusion",
+      value: 2707,
+    },
+    {
+      name: "Abs. informations",
+      value: 5707,
+    },
+    {
+      name: "Diverses",
+      value: 5907,
+    },
+    {
+      name: "Entretien non effectué",
+      value: 5707,
+    },
+    {
+      name: "Fonctionnelle",
+      value: 5007,
+    },
+  ];
+  
+  export const dataFMBT = [
+    {
+      name: "Correctif non appliqué",
+      value: 5000,
+    },
+    {
+      name: "Technologique",
+      value: 2007,
+    },
+    {
+      name: "Non analysée",
+      value: 5707,
+    },
+    {
+      name: "Sans conclusion",
+      value: 4707,
+    },
+    {
+      name: "Abs. informations",
+      value: 12707,
+    },
+    {
+      name: "Diverses",
+      value: 2907,
+    },
+    {
+      name: "Entretien non effectué",
+      value: 2707,
+    },
+    {
+      name: "Fonctionnelle",
+      value: 5007,
+    },
+  ];
+  
+  export const dataFMNS = [
+    {
+      name: "Correctif non appliqué",
+      value: 6000,
+    },
+    {
+      name: "Technologique",
+      value: 5007,
+    },
+    {
+      name: "Non analysée",
+      value: 1107,
+    },
+    {
+      name: "Sans conclusion",
+      value: 8707,
+    },
+    {
+      name: "Abs. informations",
+      value: 6707,
+    },
+    {
+      name: "Diverses",
+      value: 3507,
+    },
+    {
+      name: "Entretien non effectué",
+      value: 3707,
+    },
+    {
+      name: "Fonctionnelle",
+      value: 3007,
+    },
+  ];

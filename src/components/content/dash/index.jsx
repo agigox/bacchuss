@@ -13,6 +13,7 @@ const StyledRow = styled(Row)`
             font-size: 24px;
             font-weight: 700;
             line-height: 32px;
+            font-family: Open Sans;
             .dash-title-row {
                 .col-title {
                     flex-basis: calc(100% - 30px);
