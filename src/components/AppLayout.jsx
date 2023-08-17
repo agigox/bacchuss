@@ -10,10 +10,12 @@ const StyledContainer = styled(Container)`
     .appLayout-1 {
       background-color: var(--bac-blue);
       flex-basis: 70px;
-      overflow: hidden;
+      background-size: cover;
+      min-height: 100vh;
     }
     .appLayout-2 {
-      flex-basis: calc(100% - 70px);
+      flex-basis: calc(100vw - 70px);
+      overflow-x: hidden;
     }
   }
 `;
