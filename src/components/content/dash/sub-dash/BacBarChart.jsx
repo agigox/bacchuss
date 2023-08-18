@@ -18,12 +18,20 @@ const StyledRow = styled(Row)`
             align-self:center;
         }
         .custom-tooltip {
-            width: 200px;
+            width: 300px;
             background:rgba(255,255,255, 0.9);
             padding: 15px;
+            
+            .year {
+              font-weight: bold;
+              font-size: 16px;
+              margin-bottom: 10px;
+            }
             .value-label {
+              font-weight: bold;
+              font-size: 14px;
                 & > .col: nth-child(1){
-                    flex-basis: 100px;
+                    flex-basis: 175px;
                 }
             }
         }
@@ -33,7 +41,7 @@ const StyledRow = styled(Row)`
     if (active && payload && payload.length) {
       return (
         <Row className="custom-tooltip flex-column">
-          <Col>{`Année: ${label}`}</Col>
+          <Col className="year">{`Année ${label}`}</Col>
           <Col>
             <Row className="flex-column">
             {payload.map(({color, name, value}, index) => {
@@ -56,20 +64,15 @@ const BacBarChart = ({data, colors, labels}) => {
   return (
     <StyledRow className='pie-chart-row'>
       <Col className='pie-chart-item-1'>
-        <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={data} margin={{
-            top: 5,
-            right: 20,
-            left: 20,
-            bottom: 5,
-          }}>
-                <CartesianGrid strokeDasharray="25" vertical={false} />
-                <XAxis dataKey="year" tickLine={false} tickMargin={5} />
-                <YAxis type="number" axisLine={false} tickLine={false} tickMargin={5}/>
-                <Tooltip content={<CustomTooltip labels={labels}/>} />
-                <Bar dataKey="FH" stackId="a" barSize={32} fill={colors[0]} />
-                <Bar dataKey="FM" stackId="a" barSize={32} fill={colors[1]} />
-                <Bar dataKey="AE" stackId="a" barSize={32} fill={colors[2]} />
+        <ResponsiveContainer width={350} height={400} className="responsive-container">
+            <BarChart data={data} margin={{top: 0, right: 0, left: 0, bottom: 24 }}>
+              <CartesianGrid strokeDasharray="25" vertical={false} />
+              <XAxis dataKey="year" tickLine={false} tickMargin={5} />
+              <YAxis type="number" axisLine={false} tickLine={false} tickMargin={5}/>
+              <Tooltip content={<CustomTooltip labels={labels}/>} />
+              <Bar dataKey="FH" stackId="a" barSize={32} fill={colors[0]} animationDuration={2000} />
+              <Bar dataKey="FM" stackId="a" barSize={32} fill={colors[1]} animationDuration={2000} />
+              <Bar dataKey="AE" stackId="a" barSize={32} fill={colors[2]} animationDuration={2000} />
             </BarChart>
         </ResponsiveContainer>
       </Col>

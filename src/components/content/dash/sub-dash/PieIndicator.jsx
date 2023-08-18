@@ -1,18 +1,10 @@
 import ChartLabel from 'components/shared/ChartLabel';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Animated } from 'react-animated-css';
 import { Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 const StyledRow = styled(Row)`
   &.pie-indicator-row {
-    &.fade-in {
-      opacity: 0.2;
-    }
-    &.fade-in-demi {
-      opacity: 0.6;
-    }
-    &.fade-out {
-      opacity: 1;
-    }
     & > .col {
       &:nth-child(1) {
         flex-basis: 50px;
@@ -27,20 +19,11 @@ const StyledRow = styled(Row)`
     }
   }
 `;
-const FADE_INTERVAL_MS = 2000;
 const PieIndicator = ({item, color, displayValue}) => {
   const {name, value} = item;
-  const [fadeProp, setFadeProp] = useState('fade-in');
-  useEffect(() => {
-    setTimeout(() => {
-      setFadeProp('fade-in-demi');
-    }, FADE_INTERVAL_MS / 2);
-    setTimeout(() => {
-      setFadeProp('fade-out');
-    }, FADE_INTERVAL_MS);
-  }, [])
   return (
-    <StyledRow className={`pie-indicator-row ${fadeProp}`}>
+    <Animated animationIn="zoomIn" animationOut="zoomOut" animationInDuration={2000} animationOutDuration={2000}>
+    <StyledRow className={`pie-indicator-row`}>
       <Col className="pie-indicator-1">
         <ChartLabel color={color} />
       </Col>
@@ -51,6 +34,7 @@ const PieIndicator = ({item, color, displayValue}) => {
       {value.toLocaleString() }
       </Col>}
     </StyledRow>
+    </Animated>
   );
 };
 
