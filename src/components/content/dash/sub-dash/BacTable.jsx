@@ -24,7 +24,7 @@ const StyledRow = styled(Row)`
 `;
 const BacTable = ({data, dataHead}) => {
   return (
-    <Animated animationIn="zoomIn" animationOut="zoomOut" animationInDuration={2000} animationOutDuration={2000}>
+    <Animated animationIn="zoomIn" animationInDuration={2000}>
       <StyledRow>
         <Col md={12}>
         <Table responsive>

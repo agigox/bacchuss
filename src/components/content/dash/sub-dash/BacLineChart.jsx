@@ -3,6 +3,7 @@ import React from 'react';
 import { Col, Row, Tooltip } from 'react-bootstrap';
 import { CartesianGrid, LineChart, XAxis, YAxis, Line, ResponsiveContainer } from 'recharts';
 import styled from 'styled-components';
+import useDeviceDetect from 'utils/useDeviceDetect';
 const StyledRow = styled(Row)`
   &.bar-line-row {
     row-gap: 30px;
@@ -24,11 +25,11 @@ const StyledRow = styled(Row)`
 `;
 
 const BacLineChart = ({data, colors}) => {
-
+  const isFull = useDeviceDetect(1520);
   return (
     <StyledRow className="bar-line-row flex-column">
       <Col>
-        <ResponsiveContainer width={405} height={208} className="responsive-container">
+        <ResponsiveContainer width={isFull ? "100%" : 405} height={208} className="responsive-container">
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="25" vertical={false}/>
             <XAxis dataKey="year" tickLine={false} tickMargin={20}/>

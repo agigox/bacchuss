@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { Pie, PieChart, Cell, ResponsiveContainer } from "recharts";
+import { Pie, PieChart, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import styled from "styled-components";
 import PieIndicator from "./PieIndicator";
 
@@ -81,6 +81,7 @@ const BacPieChart = ({
                 />
               ))}
             </Pie>
+            <Tooltip />
           </PieChart>
         </ResponsiveContainer>
       </Col>

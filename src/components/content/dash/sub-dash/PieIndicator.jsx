@@ -22,7 +22,7 @@ const StyledRow = styled(Row)`
 const PieIndicator = ({item, color, displayValue}) => {
   const {name, value} = item;
   return (
-    <Animated animationIn="zoomIn" animationOut="zoomOut" animationInDuration={2000} animationOutDuration={2000}>
+    <Animated animationIn="zoomIn" animationInDuration={2000}>
     <StyledRow className={`pie-indicator-row`}>
       <Col className="pie-indicator-1">
         <ChartLabel color={color} />
