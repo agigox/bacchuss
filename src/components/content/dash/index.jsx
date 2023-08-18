@@ -8,6 +8,7 @@ const StyledRow = styled(Row)`
     padding: 24px;
     &.dash-row {
         margin: 10px;
+        row-gap: 32px;
         .dash-title {
             color: var(--bac-grayText);
             font-size: 24px;

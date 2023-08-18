@@ -41,17 +41,17 @@ const Material = () => {
       <Row className='material-row-2'>
         <Col className="dash-3">
           <Dash title="Anomalies FM HT">
-            <BacPieChart data={dataPie2} colors={pieColors2} miniSize={true} />
+            <BacPieChart data={dataPie2} colors={pieColors2} displayLabel={false} displayValue={false} colmun={false}/>
           </Dash>
         </Col>
         <Col className="dash-3">
           <Dash title="Anomalies FM BT">
-            <BacPieChart data={dataPie2} colors={pieColors2} miniSize={true} />
+            <BacPieChart data={dataPie2} colors={pieColors2} displayLabel={false} displayValue={false} colmun={false}/>
           </Dash>
         </Col>
         <Col className="dash-3">
           <Dash title="Anomalies FM NS">
-            <BacPieChart data={dataPie2} colors={pieColors2} miniSize={true} />
+            <BacPieChart data={dataPie2} colors={pieColors2} displayLabel={false} displayValue={false} colmun={false}/>
           </Dash>
         </Col>
       </Row>

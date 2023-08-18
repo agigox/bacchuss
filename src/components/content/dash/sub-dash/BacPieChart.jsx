@@ -26,9 +26,13 @@ const renderCustomizedLabel = (props, colors) => {
 };
 const StyledRow = styled(Row)`
   &.pie-chart-row {
+    row-gap: ${({colmun}) => colmun ? 0 : 32}px;
     @media (max-width: 1200px) {
       flex-wrap: wrap;
       justify-content: center;
+    }
+    .responsive-container {
+      margin: auto;
     }
     .pie-chart-item-1,
     .pie-chart-item-2 {
@@ -42,18 +46,17 @@ const StyledRow = styled(Row)`
 const BacPieChart = ({
   data,
   colors,
-  miniSize,
   displayLabel = true,
   displayValue = true,
   colmun = true,
 }) => {
   return (
     <StyledRow
-      className={`${miniSize ? "pie-chart-row flex-column" : "pie-chart-row"}`}
-      minisize={miniSize}
+      className={`${colmun ? "pie-chart-row" : "pie-chart-row flex-column"}`}
+      colmun={colmun}
     >
       <Col className="pie-chart-item-1">
-        <ResponsiveContainer width={miniSize ? 204 : 340} height={miniSize ? 204 : 340}>
+        <ResponsiveContainer width={colmun ? 340 : 208} height={colmun ? 340 : 208} className="responsive-container">
           <PieChart>
             <Pie
               data={data}
@@ -63,8 +66,8 @@ const BacPieChart = ({
               label={(props) =>
                 displayLabel ? renderCustomizedLabel(props, colors) : null
               }
-              outerRadius={miniSize ? 102 : 137}
-              innerRadius={miniSize ? 60 : 90}
+              outerRadius={colmun ? 137 : 102}
+              innerRadius={colmun ? 90 : 60}
               startAngle={90}
               endAngle={450}
               paddingAngle={0}
