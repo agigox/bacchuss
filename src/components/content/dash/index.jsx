@@ -6,7 +6,7 @@ import { ModalDash } from './sub-dash/ModalDash';
 const StyledRow = styled(Row)`
     background: var(--bac-widgetBackground);
     padding: 24px;
-    height: 476px;
+    height: 490px;
     &.dash-row {
         margin: 10px;
         row-gap: 32px;
