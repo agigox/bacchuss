@@ -31,7 +31,7 @@ const Dash = ({title, children}) => {
   const handleShow = () => setShow(true);
   return (
     <StyledRow className="dash-row flex-column">
-        <Col md={12} className="dash-title">
+        <Col md={12} className="dash-title mb-2">
             <Row className='justify-content-between dash-title-row'>
                 <Col className='col-title'>{title}</Col>
                 <Col><img style={{cursor: "pointer"}} onClick={handleShow} src={Info} alt="info" /></Col>
