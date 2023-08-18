@@ -73,7 +73,8 @@ const BacPieChart = ({
               paddingAngle={0}
               fill="#8884d8"
               dataKey="value"
-              
+              animationBegin={0}
+              animationDuration={2000}
             >
               {data.map((entry, index) => (
                 <Cell
