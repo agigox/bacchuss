@@ -31,9 +31,6 @@ const StyledRow = styled(Row)`
       flex-wrap: wrap;
       justify-content: center;
     }
-    .responsive-container {
-      margin: auto;
-    }
     .pie-chart-item-1,
     .pie-chart-item-2 {
       flex-basis: 50%;

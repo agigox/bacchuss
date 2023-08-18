@@ -1,4 +1,5 @@
 import React from 'react';
+import { Animated } from 'react-animated-css';
 import { Col, Row, Table } from 'react-bootstrap';
 import styled from 'styled-components';
 
@@ -23,34 +24,36 @@ const StyledRow = styled(Row)`
 `;
 const BacTable = ({data, dataHead}) => {
   return (
-    <StyledRow>
-      <Col md={12}>
-      <Table responsive>
-      <thead>
-        <tr>
-          {dataHead.map((item, index) => <th key={index}>{item}</th>)}
-        </tr>
-      </thead>
-      <tbody>
-        
-          {data.map((elt, index) => {
-            const isLast = index === data.length - 1;
-            return (
-            <tr key={index} className={isLast ? 'total-cell' : ''}>
-              
-              {Object.keys(elt).map((keyName, keyIndex) => {
-                return (
-                <td key={keyIndex}>
-                  {keyName === 'ratio' ? `${((isLast ? (elt['NB_ANO'] / elt['NB_EQF']) : elt[keyName]) * 100).toFixed(1)}%` : elt[keyName]}
-                </td>
-                )
-              })}
-            </tr>
-          )})}
-      </tbody>
-    </Table>
-      </Col>
-    </StyledRow>
+    <Animated animationIn="zoomIn" animationOut="zoomOut" animationInDuration={2000} animationOutDuration={2000}>
+      <StyledRow>
+        <Col md={12}>
+        <Table responsive>
+        <thead>
+          <tr>
+            {dataHead.map((item, index) => <th key={index}>{item}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          
+            {data.map((elt, index) => {
+              const isLast = index === data.length - 1;
+              return (
+              <tr key={index} className={isLast ? 'total-cell' : ''}>
+                
+                {Object.keys(elt).map((keyName, keyIndex) => {
+                  return (
+                  <td key={keyIndex}>
+                    {keyName === 'ratio' ? `${((isLast ? (elt['NB_ANO'] / elt['NB_EQF']) : elt[keyName]) * 100).toFixed(1)}%` : elt[keyName]}
+                  </td>
+                  )
+                })}
+              </tr>
+            )})}
+        </tbody>
+      </Table>
+        </Col>
+      </StyledRow>
+    </Animated>
   );
 };
 
