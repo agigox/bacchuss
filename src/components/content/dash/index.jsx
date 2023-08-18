@@ -6,7 +6,7 @@ import { ModalDash } from './sub-dash/ModalDash';
 const StyledRow = styled(Row)`
     background: var(--bac-widgetBackground);
     padding: 24px;
-    height: 476px;
+    height: 490px;
     &.dash-row {
         margin: 10px;
         row-gap: 32px;
@@ -31,7 +31,7 @@ const Dash = ({title, children}) => {
   const handleShow = () => setShow(true);
   return (
     <StyledRow className="dash-row flex-column">
-        <Col md={12} className="dash-title">
+        <Col md={12} className="dash-title mb-2">
             <Row className='justify-content-between dash-title-row'>
                 <Col className='col-title'>{title}</Col>
                 <Col><img style={{cursor: "pointer"}} onClick={handleShow} src={Info} alt="info" /></Col>

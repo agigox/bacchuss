@@ -9,19 +9,21 @@ import {
   barColorsH,
   barLabelsH,
   dataBarChartH,
-  pieColorsFM,
   dataTableHeadH,
   dataTableReparH,
-  dataFMHT,
-  dataFMBT,
-  dataFMNS,
+  dataHumainFMHT,
+  dataHumainFMBT,
+  dataHumainFMNS,
+  pieColorsHumainFMHT,
+  pieColorsHumainFMBT,
+  pieColorsHumainFMNS,
 } from "utils/data";
 
 const Human = () => {
   return (
     <Container>
-      <Row className="page-row-1" noGutters>
-        <Col md="6">
+      <Row className="human-row-1" >
+        <Col  md="6" sm="12">
           <Dash title="Répartitions Anomalies FM par centres">
             <BacTable
               data={[...dataTableReparH, sumData(dataTableReparH)]}
@@ -29,7 +31,7 @@ const Human = () => {
             />
           </Dash>
         </Col>
-        <Col md="6">
+        <Col  md="6" sm="12">
           <Dash title="Evolution Anomalies FM">
             <BacBarChart
               data={dataBarChartH}
@@ -39,12 +41,12 @@ const Human = () => {
           </Dash>
         </Col>
       </Row>
-      <Row className="page-row-2" noGutters>
-        <Col md="4" sm="12">
+      <Row className="human-row-2" >
+        <Col className="dash-3" md="4" sm="12">
           <Dash title="Anomalies FM HT">
             <BacPieChart
-              data={dataFMHT}
-              colors={pieColorsFM}
+              data={dataHumainFMHT}
+              colors={pieColorsHumainFMHT}
               miniSize={true}
               displayLabel={false}
               displayValue={false}
@@ -55,8 +57,8 @@ const Human = () => {
         <Col md="4" sm="12">
           <Dash title="Anomalies FM BT">
             <BacPieChart
-              data={dataFMBT}
-              colors={pieColorsFM}
+              data={dataHumainFMBT}
+              colors={pieColorsHumainFMBT}
               miniSize={true}
               displayLabel={false}
               displayValue={false}
@@ -67,8 +69,8 @@ const Human = () => {
         <Col md="4" sm="12">
           <Dash title="Anomalies FM NS">
             <BacPieChart
-              data={dataFMNS}
-              colors={pieColorsFM}
+              data={dataHumainFMNS}
+              colors={pieColorsHumainFMNS}
               miniSize={true}
               displayLabel={false}
               displayValue={false}
