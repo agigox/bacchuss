@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import styled from "styled-components";
 import Dash from "./dash";
 import BacTable from "./dash/sub-dash/BacTable";
 import BacBarChart from "./dash/sub-dash/BacBarChart";
@@ -17,20 +16,11 @@ import {
   dataFMBT,
   dataFMNS,
 } from "utils/data";
-const StyledContainer = styled(Container)`
-  .human-row-1 {
-    margin-bottom: 15px;
-    flex-wrap: wrap;
-  }
-  .human-row-2 {
-    flex-wrap: wrap;
-  }
-`;
 
 const Human = () => {
   return (
-    <StyledContainer>
-      <Row className="human-row-1" noGutters>
+    <Container>
+      <Row className="page-row-1" noGutters>
         <Col md="6">
           <Dash title="Répartitions Anomalies FM par centres">
             <BacTable
@@ -49,8 +39,8 @@ const Human = () => {
           </Dash>
         </Col>
       </Row>
-      <Row className="human-row-2" noGutters>
-        <Col className="dash-3" md="4" sm="12">
+      <Row className="page-row-2" noGutters>
+        <Col md="4" sm="12">
           <Dash title="Anomalies FM HT">
             <BacPieChart
               data={dataFMHT}
@@ -87,7 +77,7 @@ const Human = () => {
           </Dash>
         </Col>
       </Row>
-    </StyledContainer>
+    </Container>
   );
 };
 

@@ -28,7 +28,7 @@ const BacLineChart = ({data, colors}) => {
   return (
     <StyledRow className="bar-line-row flex-column">
       <Col>
-        <ResponsiveContainer width="100%" height={350}>
+        <ResponsiveContainer width={405} height={208}>
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="25" vertical={false}/>
             <XAxis dataKey="year" tickLine={false} tickMargin={20}/>
