@@ -37,6 +37,24 @@ const StyledRow = styled(Row)`
             }
         }
     }
+    .pie-chart-item-1,
+    .pie-chart-item-2 {
+      flex-basis: 50%;
+    }
+    .pie-chart-item-2 {
+      align-self: center;
+    }
+    .custom-tooltip {
+      width: 200px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      .value-label {
+        &>.col: nth-child(1) {
+          flex-basis: 100px;
+        }
+      }
+    }
+  }
 `;
   const CustomTooltip = ({ active, payload, label, labels }) => {
     if (active && payload && payload.length) {
@@ -53,13 +71,13 @@ const StyledRow = styled(Row)`
                     </Row>
                 </Col>)
             })}
-            </Row>
-          </Col>
-        </Row>
-      );
-    }
-  
-    return null;
+          </Row>
+        </Col>
+      </Row>
+    );
+  }
+
+  return null;
 };
 const BacBarChart = ({data, colors, labels}) => {
   const isFull = useDeviceDetect(1400);
@@ -84,11 +102,9 @@ const BacBarChart = ({data, colors, labels}) => {
           return <Col key={index}><PieIndicator key={index} item={item} color={colors[index]} /></Col>
         })}
         </Row>
-
       </Col>
-      
     </StyledRow>
-  )
-}
+  );
+};
 
 export default BacBarChart;
