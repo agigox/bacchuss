@@ -3,18 +3,19 @@ import { Col, Row } from 'react-bootstrap';
 import { Bar, BarChart, CartesianGrid, Tooltip, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import { styled } from 'styled-components';
 import PieIndicator from './PieIndicator';
+import useDeviceDetect from 'utils/useDeviceDetect';
 const StyledRow = styled(Row)`
-    &.pie-chart-row {
+    &.bar-chart-row {
         column-gap: 64px;
-        @media (max-width: 1200px) {
-            column-gap: 0;
-            flex-wrap: wrap;
-            justify-content: center;
+        @media (max-width: 1400px) {
+          column-gap: 0;
+          flex-wrap: wrap;
+          justify-content: center;
         }
-        .pie-chart-item-1, .pie-chart-item-2 {
+        .bar-chart-item-1, .bar-chart-item-2 {
             flex-basis: 50%;
         }
-        .pie-chart-item-2 {
+        .bar-chart-item-2 {
             align-self:center;
         }
         .custom-tooltip {
@@ -61,10 +62,11 @@ const StyledRow = styled(Row)`
     return null;
 };
 const BacBarChart = ({data, colors, labels}) => {
+  const isFull = useDeviceDetect(1400);
   return (
-    <StyledRow className='pie-chart-row'>
-      <Col className='pie-chart-item-1'>
-        <ResponsiveContainer width={350} height={400} className="responsive-container">
+    <StyledRow className='bar-chart-row'>
+      <Col className='bar-chart-item-1'>
+        <ResponsiveContainer width={350} height={isFull ? 308 : 400} className="responsive-container">
             <BarChart data={data} margin={{top: 0, right: 0, left: 0, bottom: 24 }}>
               <CartesianGrid strokeDasharray="25" vertical={false} />
               <XAxis dataKey="year" tickLine={false} tickMargin={5} />
@@ -76,7 +78,7 @@ const BacBarChart = ({data, colors, labels}) => {
             </BarChart>
         </ResponsiveContainer>
       </Col>
-      <Col className='pie-chart-item-2'>
+      <Col className='bar-chart-item-2'>
         <Row className="flex-column" style={{rowGap: '16px'}}>
         {labels.map((item, index) => {
           return <Col key={index}><PieIndicator key={index} item={item} color={colors[index]} /></Col>
