@@ -20,7 +20,7 @@ import {
 const Material = () => {
   return (
     <Container>
-      <Row className="material-row-1">
+      <Row className="page-row-1">
         <Col className="dash-1" md="6" sm="12">
           <Dash title="Répartitions Anomalies FM par centres">
             <BacTable
@@ -39,7 +39,7 @@ const Material = () => {
           </Dash>
         </Col>
       </Row>
-      <Row className="material-row-2">
+      <Row className="page-row-2">
         <Col className="dash-3" md="4" sm="12">
           <Dash title="Anomalies FM HT">
             <BacPieChart

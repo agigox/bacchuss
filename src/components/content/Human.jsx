@@ -22,7 +22,7 @@ import {
 const Human = () => {
   return (
     <Container>
-      <Row className="human-row-1" >
+      <Row className="page-row-1" >
         <Col  md="6" sm="12">
           <Dash title="Répartitions Anomalies FM par centres">
             <BacTable
@@ -41,7 +41,7 @@ const Human = () => {
           </Dash>
         </Col>
       </Row>
-      <Row className="human-row-2" >
+      <Row className="page-row-2" >
         <Col className="dash-3" md="4" sm="12">
           <Dash title="Anomalies FM HT">
             <BacPieChart
