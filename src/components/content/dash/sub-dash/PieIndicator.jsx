@@ -7,6 +7,7 @@ const StyledRow = styled(Row)`
   &.pie-indicator-row {
     align-items: center;
     & > .col {
+      white-space: nowrap;
       &:nth-child(1) {
         flex-basis: 50px;
       }

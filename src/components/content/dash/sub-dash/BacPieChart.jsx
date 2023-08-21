@@ -46,6 +46,10 @@ const StyledRow = styled(Row)`
       }
     }
   }
+
+  path.recharts-pie-label-line {
+    stroke-width: 1px !important;
+  }
 `;
 const BacPieChart = ({
   data,
@@ -62,7 +66,11 @@ const BacPieChart = ({
       colmun={colmun}
     >
       <Col className="pie-chart-item-1">
-        <ResponsiveContainer width={colmun ? 340 : 208} height={colmun ? 340 : 208} className="responsive-container">
+        <ResponsiveContainer
+          width={colmun ? 340 : 208}
+          height={colmun ? 340 : 208}
+          className="responsive-container"
+        >
           <PieChart>
             <Pie
               data={data}

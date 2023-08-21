@@ -45,7 +45,7 @@ export const dataAno = [
     Marseille: 1083,
     Nantes: 1457,
     Toulouse: 1676,
-    Lyon: 1059,
+    Lyon: 609,
     Nancy: 1234,
     Paris: 601,
   },
@@ -768,5 +768,150 @@ export const dataMaterialFMNS = [
   {
     name: "Fonctionnelle",
     value: 3007,
+  },
+];
+
+export const dataPieCAnomaly = [
+  {
+    name: "Fermeture intempestive",
+    value: 4146,
+  },
+  {
+    name: "Sans conséquence",
+    value: 4313,
+  },
+  {
+    name: "Ouverture tardive",
+    value: 3355,
+  },
+  {
+    name: "Ouverture intempestive",
+    value: 2355,
+  },
+  {
+    name: "Non ouverture",
+    value: 2355,
+  },
+  {
+    name: "Non fermeture",
+    value: 1355,
+  },
+  {
+    name: "Fermeture tardive",
+    value: 3355,
+  },
+];
+export const pieColorsCAnomaly = [
+  "#E675D4",
+  "#7AE6ED",
+  "#4DA466",
+  "#9D50FF",
+  "#3F51B5",
+  "#FBA23A",
+  "#009CDF",
+];
+
+export const pieColorsCEvAnomaly = [
+  "#009CDF",
+  "#7AE6ED",
+  "#3F51B5",
+  "#4DA466",
+  "#F0594A",
+  "#E675D4",
+  "#FBA23A",
+  "#B07EFF",
+];
+export const dataBarChartCEvAnomaly = [
+  {
+    year: "2017",
+    OI: 390,
+    SC: 250,
+    EMPTY: 60,
+    FI: 60,
+    FT: 50,
+    NF: 50,
+    NO: 0,
+    OT: 0,
+  },
+  {
+    year: "2018",
+    OI: 530,
+    SC: 250,
+    EMPTY: 60,
+    FI: 60,
+    FT: 50,
+    NF: 40,
+    NO: 0,
+    OT: 0,
+  },
+  {
+    year: "2019",
+    OI: 390,
+    SC: 350,
+    EMPTY: 60,
+    FI: 60,
+    FT: 70,
+    NF: 40,
+    NO: 0,
+    OT: 0,
+  },
+  {
+    year: "2020",
+    OI: 430,
+    SC: 380,
+    EMPTY: 60,
+    FI: 60,
+    FT: 40,
+    NF: 60,
+    NO: 0,
+    OT: 0,
+  },
+  {
+    year: "2021",
+    OI: 490,
+    SC: 320,
+    EMPTY: 60,
+    FI: 60,
+    FT: 100,
+    NF: 60,
+    NO: 0,
+    OT: 0,
+  },
+  {
+    year: "2022",
+    OI: 290,
+    SC: 180,
+    EMPTY: 60,
+    FI: 60,
+    FT: 30,
+    NF: 60,
+    NO: 0,
+    OT: 0,
+  },
+];
+export const barLabelsCEvAnomaly = [
+  {
+    name: "Conséquences anomalies OI",
+  },
+  {
+    name: "Conséquences anomalies SC",
+  },
+  {
+    name: "Conséquences anomalies vide",
+  },
+  {
+    name: "Conséquences anomalies FI",
+  },
+  {
+    name: "Conséquences anomalies FT",
+  },
+  {
+    name: "Conséquences anomalies NF",
+  },
+  {
+    name: "Conséquences anomalies NO",
+  },
+  {
+    name: "Conséquences anomalies OT",
   },
 ];
