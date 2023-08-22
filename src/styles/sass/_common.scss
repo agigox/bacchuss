@@ -20,6 +20,11 @@
 }
 .page-row-1, .page-row-2 {
   flex-wrap: wrap;
+  & > [class*="col-"] {
+    background-color: rgba(227, 244, 252, 1);
+    background-clip: padding-box;
+    border: 10px solid transparent;
+  }
 }
 .responsive-container {
   margin: auto;
