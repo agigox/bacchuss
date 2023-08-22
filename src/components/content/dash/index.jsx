@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Info from "images/info.svg"
 import { ModalDash } from './sub-dash/ModalDash';
 const StyledRow = styled(Row)`
-    background: var(--bac-widgetBackground);
     padding: 24px;
     &.dash-row {
         margin: 10px;

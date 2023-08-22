@@ -35,6 +35,9 @@ const StyledRow = styled(Row)`
     .pie-chart-item-1,
     .pie-chart-item-2 {
       flex-basis: 50%;
+      @media (max-width: 768px) {
+        flex-basis: 100%;
+      }
     }
     .pie-chart-item-2 {
       align-self: center;

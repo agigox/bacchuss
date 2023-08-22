@@ -22,6 +22,9 @@ const StyledRow = styled(Row)`
         }
         .bar-chart-item-1, .bar-chart-item-2 {
             flex-basis: 50%;
+            @media (max-width: 768px) {
+              flex-basis: 100%;
+            }
         }
         .bar-chart-item-2 {
             align-self:center;
@@ -52,43 +55,8 @@ const StyledRow = styled(Row)`
     .pie-chart-item-2 {
       align-self: center;
     }
-    .custom-tooltip {
-      width: 200px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 15px;
-      .value-label {
-        &>.col: nth-child(1) {
-          flex-basis: 100px;
-        }
-      }
-    }
   }
 `;
-const CustomTooltip = ({ active, payload, label, labels }) => {
-  if (active && payload && payload.length) {
-    return (
-      <Row className="custom-tooltip flex-column">
-        <Col className="year">{`Année ${label}`}</Col>
-        <Col>
-          <Row className="flex-column">
-            {payload.map(({ color, name, value }, index) => {
-              return (
-                <Col key={index} style={{ color }}>
-                  <Row className="value-label">
-                    <Col>{labels[index].name}</Col>
-                    <Col>{value}</Col>
-                  </Row>
-                </Col>
-              );
-            })}
-          </Row>
-        </Col>
-      </Row>
-    );
-  }
-
-  return null;
-};
 const BacBarChart = ({ data, colors, labels }) => {
   const isFull = useDeviceDetect(1400);
 
@@ -128,7 +96,15 @@ const BacBarChart = ({ data, colors, labels }) => {
               tickLine={false}
               tickMargin={5}
             />
-            <Tooltip content={<CustomTooltip labels={labels} />} />
+            <Tooltip offset={0}
+              itemStyle={{marginLeft: "10px"}}
+              contentStyle={{padding: "20px"}}
+              labelStyle={{fontWeight: "bold", fontSize: "15px"}}
+              cursor={{ stroke: 'white', strokeWidth: 3 }}
+              labelFormatter={(value) => {
+                return `Année : ${value}`
+              }}
+            />
             {getBar()}
           </BarChart>
         </ResponsiveContainer>
