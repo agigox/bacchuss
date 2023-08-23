@@ -2,8 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Pie, PieChart, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import styled from "styled-components";
-import PieIndicator from "./PieIndicator";
-import useDeviceDetect from "utils/useDeviceDetect";
+import Indicators from "./Indicators";
 
 const renderCustomizedLabel = (props, colors) => {
   const { cx, cy, midAngle, innerRadius, outerRadius, percent, index } = props;
@@ -27,26 +26,16 @@ const renderCustomizedLabel = (props, colors) => {
 };
 const StyledRow = styled(Row)`
   &.pie-chart-row {
+    flex-wrap: wrap;
+    column-gap: 20px;
     row-gap: ${({colmun}) => colmun ? 0 : 32}px;
     @media (max-width: 1400px) {
       flex-wrap: wrap;
       justify-content: center;
     }
-    .pie-chart-item-1,
-    .pie-chart-item-2 {
-      flex-basis: 50%;
-      @media (max-width: 768px) {
-        flex-basis: 100%;
-      }
-    }
     .pie-chart-item-2 {
       align-self: center;
-      .pie-sub-1 {
-        @media (max-width: 1400px) {
-          flex-direction: column;
-        }
-        
-      }
+      flex: 1;
     }
   }
 
@@ -61,8 +50,6 @@ const BacPieChart = ({
   displayValue = true,
   colmun = true,
 }) => {
-  const isFull = useDeviceDetect(1400);
-  console.log(isFull)
   return (
     <StyledRow
       className={`${colmun ? "pie-chart-row" : "pie-chart-row flex-column"}`}
@@ -106,23 +93,7 @@ const BacPieChart = ({
         </ResponsiveContainer>
       </Col>
       <Col className="pie-chart-item-2">
-        <Row
-          className={`flex-wrap pie-sub-1`}
-          style={{ rowGap: "16px" }}
-        >
-          {data.map((item, index) => {
-            return (
-              <Col md={`${colmun ? "12" : "6"}`} key={index}>
-                <PieIndicator
-                  key={index}
-                  item={item}
-                  color={colors[index]}
-                  displayValue={displayValue}
-                />
-              </Col>
-            );
-          })}
-        </Row>
+        <Indicators data={data} colmun={colmun} colors={colors}  displayValue={displayValue}/>
       </Col>
     </StyledRow>
   );

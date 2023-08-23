@@ -35,6 +35,7 @@ const Consequences = () => {
               data={dataBarChartCEvAnomaly}
               colors={pieColorsCEvAnomaly}
               labels={barLabelsCEvAnomaly}
+              colmun={true}
             />
           </Dash>
         </Col>

@@ -35,6 +35,7 @@ const Material = () => {
               data={dataBarChart2}
               colors={barColors2}
               labels={barLabels2}
+              colmun={true}
             />
           </Dash>
         </Col>

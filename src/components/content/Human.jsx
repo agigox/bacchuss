@@ -23,7 +23,7 @@ const Human = () => {
   return (
     <Container>
       <Row className="page-row-1" >
-        <Col  md="6" sm="12">
+        <Col md="6" sm="12">
           <Dash title="Répartitions Anomalies FM par centres">
             <BacTable
               data={[...dataTableReparH, sumData(dataTableReparH)]}
@@ -37,6 +37,7 @@ const Human = () => {
               data={dataBarChartH}
               colors={barColorsH}
               labels={barLabelsH}
+              colmun={true}
             />
           </Dash>
         </Col>
@@ -67,7 +68,7 @@ const Human = () => {
           </Dash>
         </Col>
         <Col md="4" sm="12">
-          <Dash title="Anomalies FM NS">
+          <Dash title="Anomalies FH ni BT ni HT">
             <BacPieChart
               data={dataHumainFMNS}
               colors={pieColorsHumainFMNS}

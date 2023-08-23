@@ -10,24 +10,20 @@ import {
   YAxis,
 } from "recharts";
 import { styled } from "styled-components";
-import PieIndicator from "./PieIndicator";
 import useDeviceDetect from "utils/useDeviceDetect";
+import Indicators from "./Indicators";
 const StyledRow = styled(Row)`
     &.bar-chart-row {
+        flex-wrap: wrap;
         column-gap: 64px;
         @media (max-width: 1400px) {
           column-gap: 0;
           flex-wrap: wrap;
           justify-content: center;
         }
-        .bar-chart-item-1, .bar-chart-item-2 {
-            flex-basis: 50%;
-            @media (max-width: 768px) {
-              flex-basis: 100%;
-            }
-        }
         .bar-chart-item-2 {
-            align-self:center;
+          flex: 1;
+          align-self: center;
         }
         .custom-tooltip {
             width: 300px;
@@ -48,16 +44,10 @@ const StyledRow = styled(Row)`
             }
         }
     }
-    .pie-chart-item-1,
-    .pie-chart-item-2 {
-      flex-basis: 50%;
-    }
-    .pie-chart-item-2 {
-      align-self: center;
-    }
   }
 `;
-const BacBarChart = ({ data, colors, labels }) => {
+const BacBarChart = ({ data, colmun, colors, labels }) => {
+  console.log(labels)
   const isFull = useDeviceDetect(1400);
 
   const getBar = () => {
@@ -110,15 +100,7 @@ const BacBarChart = ({ data, colors, labels }) => {
         </ResponsiveContainer>
       </Col>
       <Col className="bar-chart-item-2">
-        <Row className="flex-column" style={{ rowGap: "16px" }}>
-          {labels.map((item, index) => {
-            return (
-              <Col key={index}>
-                <PieIndicator key={index} item={item} color={colors[index]} />
-              </Col>
-            );
-          })}
-        </Row>
+        <Indicators data={labels} colmun={colmun} colors={colors}  displayValue={false}/>
       </Col>
     </StyledRow>
   );
