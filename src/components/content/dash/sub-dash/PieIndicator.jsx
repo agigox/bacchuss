@@ -5,6 +5,12 @@ import { Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 const StyledRow = styled(Row)`
   &.pie-indicator-row {
+    .style-item {
+      & > .col:nth-child(1) {
+        flex-basis: 140px;
+        white-space: break-spaces;
+      }
+    }
     align-items: center;
     & > .col {
       white-space: nowrap;
@@ -12,17 +18,7 @@ const StyledRow = styled(Row)`
         flex-basis: 50px;
       }
       &:nth-child(2) {
-        flex-basis: 180px;
-        @media (min-width: 1860px) {
-          flex-basis: 225px;
-        }
-        @media (max-width: 1400px) {
-          flex-basis: ${props => props.value ? "160px" : "220px"};
-
-        }
-      }
-      &:nth-child(3) {
-        flex-basis: 70px;
+        flex-basis: calc(100% - 50px);
       }
       
     }
@@ -33,17 +29,18 @@ const PieIndicator = ({item, color, displayValue}) => {
 
   return (
     <Animated animationIn="zoomIn" animationInDuration={2000} >
-    <StyledRow className={`pie-indicator-row`} value={displayValue && value}>
-      <Col className="pie-indicator-1">
-        <ChartLabel color={color} />
-      </Col>
-      <Col className="pie-indicator-2 pie-label">
-      {name}
-      </Col>
-      {displayValue && value && <Col className="pie-indicator-3  pie-label">
-      {value.toLocaleString() }
-      </Col>}
-    </StyledRow>
+      <StyledRow className={`pie-indicator-row`}>
+        <Col className="pie-indicator-1">
+          <ChartLabel color={color} />
+        </Col>
+        <Col className="pie-indicator-2 pie-label">
+          <Row className="style-item">
+            <Col>{name}</Col>
+            {displayValue && <Col>{value.toLocaleString()}</Col>}
+          </Row>
+        
+        </Col>
+      </StyledRow>
     </Animated>
   );
 };

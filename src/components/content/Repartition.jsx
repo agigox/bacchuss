@@ -14,12 +14,12 @@ const Repartition = () => {
       <Row className='page-row-1'>
         <Col md="6">
           <Dash title="Répartition Anomalies">
-            <BacPieChart data={dataPie1} colors={pieColors1}/>
+            <BacPieChart data={dataPie1} colors={pieColors1} displayValue={false} />
           </Dash>
         </Col>
         <Col md="6">
           <Dash title="Evolution Anomalies">
-            <BacBarChart data={dataBarChart} colors={barColors} labels={barLabels} />
+            <BacBarChart data={dataBarChart} colors={barColors} labels={barLabels} colmun={true}/>
           </Dash>
         </Col>
       </Row>

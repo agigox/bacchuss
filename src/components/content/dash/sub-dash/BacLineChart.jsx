@@ -1,9 +1,8 @@
-import ChartLabel from 'components/shared/ChartLabel';
 import React from 'react';
 import { Col, Row, Tooltip } from 'react-bootstrap';
 import { CartesianGrid, LineChart, XAxis, YAxis, Line, ResponsiveContainer } from 'recharts';
 import styled from 'styled-components';
-import useDeviceDetect from 'utils/useDeviceDetect';
+import Indicators from './Indicators';
 const StyledRow = styled(Row)`
   &.bar-line-row {
     row-gap: 30px;
@@ -25,11 +24,16 @@ const StyledRow = styled(Row)`
 `;
 
 const BacLineChart = ({data, colors}) => {
-  const isFull = useDeviceDetect(1520);
+  
+  const dataInd = Object.keys(colors).map((item) => {
+    return {name: item, values: 0}
+  });
+  const colorsInd = Object.entries(colors).map((item) => item[1]);
+  
   return (
     <StyledRow className="bar-line-row flex-column">
       <Col>
-        <ResponsiveContainer width={isFull ? "100%" : 405} height={208} className="responsive-container">
+        <ResponsiveContainer width="100%" height={208} className="responsive-container">
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="25" vertical={false}/>
             <XAxis dataKey="year" tickLine={false} tickMargin={20}/>
@@ -46,16 +50,7 @@ const BacLineChart = ({data, colors}) => {
         </ResponsiveContainer>
       </Col>
       <Col>
-        <Row className='flex-wrap label-row'>
-          {Object.entries(colors).map((item, index) => {
-            return <Col className="label-item" key={index}>
-              <Row>
-                <Col><ChartLabel color={item[1]} /></Col>
-                <Col>{item[0]}</Col>
-              </Row>
-            </Col>
-          })}
-      </Row>
+        <Indicators data={dataInd} colmun={false} colors={colorsInd}  displayValue={false}/>
       </Col>
     </StyledRow>
   );
