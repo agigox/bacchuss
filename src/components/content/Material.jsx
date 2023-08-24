@@ -22,7 +22,7 @@ const Material = () => {
     <Container>
       <Row className="page-row-1">
         <Col className="dash-1" md="6" sm="12">
-          <Dash title="Répartitions Anomalies FM par centres">
+          <Dash title="Répartition ANO FM par centre et par type (2022)">
             <BacTable
               data={[...dataTableRepar2, sumData(dataTableRepar2)]}
               dataHead={dataTableHead2}
@@ -30,7 +30,7 @@ const Material = () => {
           </Dash>
         </Col>
         <Col className="dash-2" md="6" sm="12">
-          <Dash title="Evolution Anomalies FM">
+          <Dash title="Répartition ANO FM par type et par année">
             <BacBarChart
               data={dataBarChart2}
               colors={barColors2}
@@ -42,7 +42,7 @@ const Material = () => {
       </Row>
       <Row className="page-row-2">
         <Col className="dash-3" md="4" sm="12">
-          <Dash title="Anomalies FM HT">
+          <Dash title="Répartition Anomalies FM HT par type (2022)">
             <BacPieChart
               data={dataMaterialFMHT}
               colors={pieColorsMaterialFM}
@@ -53,7 +53,7 @@ const Material = () => {
           </Dash>
         </Col>
         <Col className="dash-3" md="4" sm="12">
-          <Dash title="Anomalies FM BT">
+          <Dash title="Répartition Anomalies FM BT par type (2022)">
             <BacPieChart
               data={dataMaterialFMBT}
               colors={pieColorsMaterialFM}
@@ -64,7 +64,7 @@ const Material = () => {
           </Dash>
         </Col>
         <Col className="dash-3" md="4" sm="12">
-          <Dash title="Anomalies FM NS">
+          <Dash title="Répartition Anomalies FM Non Spécifié par type (2022)">
             <BacPieChart
               data={dataMaterialFMNS}
               colors={pieColorsMaterialFM}

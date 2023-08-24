@@ -29,11 +29,11 @@ const router = createBrowserRouter([
         element: <Repartition />,
       },
       {
-        path: "human/",
+        path: "ano-fh/",
         element: <Human />,
       },
       {
-        path: "material/",
+        path: "ano-fm/",
         element: <Material />,
       },
       {

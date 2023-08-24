@@ -20,7 +20,7 @@ const Consequences = () => {
     <Container>
       <Row className="page-row-1">
         <Col md="6">
-          <Dash title="Conséquences Anomalies">
+          <Dash title="Répartition ANO par type de conséquence (2022)">
             <BacPieChart
               data={dataPieCAnomaly}
               colors={pieColorsCAnomaly}
@@ -30,7 +30,7 @@ const Consequences = () => {
           </Dash>
         </Col>
         <Col md="6">
-          <Dash title="Evolution Conséquences Anomalies">
+          <Dash title="Répartition ANO par conséquence et par année">
             <BacBarChart
               data={dataBarChartCEvAnomaly}
               colors={pieColorsCEvAnomaly}
@@ -42,7 +42,7 @@ const Consequences = () => {
       </Row>
       <Row className="page-row-2">
         <Col md="6">
-          <Dash title="Conséquences Anomalies par Centre">
+          <Dash title="Répartition ANO par centre et par conséquence (2022)">
             <BacTable
               data={[...dataTableReparC, sumData(dataTableReparC)]}
               dataHead={dataTableHeadC}
