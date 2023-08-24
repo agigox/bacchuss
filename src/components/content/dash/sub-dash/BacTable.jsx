@@ -43,7 +43,11 @@ const BacTable = ({data, dataHead}) => {
                 {Object.keys(elt).map((keyName, keyIndex) => {
                   return (
                   <td key={keyIndex}>
-                    {keyName === 'ratio' ? `${((isLast ? (elt['NB_ANO'] / elt['NB_EQF']) : elt[keyName]) * 100).toFixed(1)}%` : elt[keyName]}
+                    {
+                      keyName === 'ratio' ? 
+                      `${((isLast ? (elt['NB_ANO'] / elt['NB_EQF']) : elt[keyName]) * 100).toFixed(1)}%`
+                       : elt[keyName]
+                    }
                   </td>
                   )
                 })}
