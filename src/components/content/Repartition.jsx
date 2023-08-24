@@ -13,19 +13,19 @@ const Repartition = () => {
     <Container>
       <Row className='page-row-1'>
         <Col md="6">
-          <Dash title="Répartition Anomalies">
+          <Dash title="Répartition Anomalies (2022)">
             <BacPieChart data={dataPie1} colors={pieColors1} displayValue={false} />
           </Dash>
         </Col>
         <Col md="6">
-          <Dash title="Evolution Anomalies">
+          <Dash title="Répartition Anomalies par année">
             <BacBarChart data={dataBarChart} colors={barColors} labels={barLabels} colmun={true}/>
           </Dash>
         </Col>
       </Row>
       <Row className='page-row-2'>
         <Col md="6">
-          <Dash title="Répartition anomalie par catégorie et par centre">
+          <Dash title="Répartition Anomalies par centre et par catégorie (2022)">
             <BacTable data={[...dataTableRepar1, sumData(dataTableRepar1)]} dataHead={dataTableHead1}/>
           </Dash>
         </Col>

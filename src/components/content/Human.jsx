@@ -24,7 +24,7 @@ const Human = () => {
     <Container>
       <Row className="page-row-1" >
         <Col md="6" sm="12">
-          <Dash title="Répartitions Anomalies FM par centres">
+          <Dash title="Répartition ANO FH par centre et par type (2022)">
             <BacTable
               data={[...dataTableReparH, sumData(dataTableReparH)]}
               dataHead={dataTableHeadH}
@@ -32,7 +32,7 @@ const Human = () => {
           </Dash>
         </Col>
         <Col  md="6" sm="12">
-          <Dash title="Evolution Anomalies FM">
+          <Dash title="Répartition ANO FH par type et par année">
             <BacBarChart
               data={dataBarChartH}
               colors={barColorsH}
@@ -44,7 +44,7 @@ const Human = () => {
       </Row>
       <Row className="page-row-2" >
         <Col className="dash-3" md="4" sm="12">
-          <Dash title="Anomalies FM HT">
+          <Dash title="Répartition Anomalies FH HT par type (2022)">
             <BacPieChart
               data={dataHumainFMHT}
               colors={pieColorsHumainFMHT}
@@ -56,7 +56,7 @@ const Human = () => {
           </Dash>
         </Col>
         <Col md="4" sm="12">
-          <Dash title="Anomalies FM BT">
+          <Dash title="Répartition Anomalies FH BT par type (2022)">
             <BacPieChart
               data={dataHumainFMBT}
               colors={pieColorsHumainFMBT}
@@ -68,7 +68,7 @@ const Human = () => {
           </Dash>
         </Col>
         <Col md="4" sm="12">
-          <Dash title="Anomalies FH ni BT ni HT">
+          <Dash title="Répartition Anomalies FH ni BT ni HT par type (2022)">
             <BacPieChart
               data={dataHumainFMNS}
               colors={pieColorsHumainFMNS}

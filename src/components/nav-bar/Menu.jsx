@@ -10,8 +10,8 @@ import Human from 'images/navbar/menu/human.svg';
 const menuItems = [
   {icon: Home, title: "Synthèse", height: 59, route: '/'},
   {icon: Repartition, title: "Répart...", height: 59, route: '/repartition'},
-  {icon: Human, title: "Facteurs Humains", height: 74, route: '/human'},
-  {icon: Material, title: "Facteurs Matériels", height: 74, route: '/material'},
+  {icon: Human, title: "ANO FH", height: 59, route: '/ano-fh'},
+  {icon: Material, title: "ANO FM", height: 59, route: '/ano-fm'},
   {icon: Consequences, title: "Conséq...", height: 59, route: '/consequences'},
 ]
 const StyledRow = styled(Row)`
