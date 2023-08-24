@@ -4,7 +4,6 @@ import BacTable from './dash/sub-dash/BacTable';
 import BacPieChart from './dash/sub-dash/BacPieChart';
 import BacLineChart from './dash/sub-dash/BacLineChart';
 import Dash from './dash';
-import { sumData } from 'utils';
 import { colorsLine, dataAno, dataAnoEQ, dataPie, dataTable, dataTableHead, pieColors, ratioAno } from 'utils/data';
 
 const Synthesis = () => {
@@ -19,7 +18,7 @@ const Synthesis = () => {
         </Col>
         <Col md="6">
           <Dash title="Synthèse des EQF et Ano par centre">
-            <BacTable data={[...dataTable, sumData(dataTable)]} dataHead={dataTableHead} />
+            <BacTable data={[...dataTable]} dataHead={dataTableHead} />
           </Dash>
         </Col>
       </Row>

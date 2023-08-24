@@ -201,7 +201,7 @@ export const dataTable = [
   { Centre: "Nantes", NB_EQF: 1439, NB_ANO: 114, ratio: 0.0792 },
   { Centre: "Paris", NB_EQF: 574, NB_ANO: 109, ratio: 0.1899 },
   { Centre: "Toulouse", NB_EQF: 1915, NB_ANO: 249, ratio: 0.13 },
-  { Centre: "National", NB_EQF: 8403, NB_ANO: 994, ratio: 0.1183 },
+  { Centre: "Total", NB_EQF: 8403, NB_ANO: 994, ratio: 0.1183 },
 ];
 export const dataTableHead = ["Centres", "Nombre EQF", "Anomalies", "Ratio"];
 
