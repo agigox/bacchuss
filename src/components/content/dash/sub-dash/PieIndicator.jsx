@@ -7,7 +7,9 @@ const StyledRow = styled(Row)`
   &.pie-indicator-row {
     .style-item {
       & > .col:nth-child(1) {
-        flex-basis: 210px;
+        flex-basis: ${(props) => {
+          return props.value ? 150 : 210
+        }}px;
         white-space: break-spaces;
       }
     }
@@ -28,7 +30,7 @@ const PieIndicator = ({item, color, displayValue}) => {
 
   return (
     <Animated animationIn="zoomIn" animationInDuration={2000} >
-      <StyledRow className={`pie-indicator-row`}>
+      <StyledRow className={`pie-indicator-row`} value={displayValue}>
         <Col className="pie-indicator-1">
           <ChartLabel color={color} />
         </Col>
