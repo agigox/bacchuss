@@ -17,7 +17,7 @@ import {
   pieColorsHumainFMHT,
   pieColorsHumainFMBT,
   pieColorsHumainFMNS,
-} from "utils/data";
+} from "utils/data/human";
 
 const Human = () => {
   return (

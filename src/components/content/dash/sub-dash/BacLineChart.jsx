@@ -23,12 +23,19 @@ const StyledRow = styled(Row)`
   
 `;
 
-const BacLineChart = ({data, colors}) => {
-  
-  const dataInd = Object.keys(colors).map((item) => {
+const BacLineChart = ({data, colors, ticks}) => {
+  const objectKeys = Object.keys(data[0]).filter(item => item !== 'year');
+  const dataInd = Object.keys(colors).filter(((item) => {
+    return objectKeys.includes(item);
+  })).map((item) => {
     return {name: item, values: 0}
   });
-  const colorsInd = Object.entries(colors).map((item) => item[1]);
+  
+  const colorsInd = Object.entries(colors).filter(((item) => {
+    return objectKeys.includes(item[0]);
+  })).map((item) => {
+    return item[1];
+  });
   
   return (
     <StyledRow className="bar-line-row flex-column">
@@ -37,7 +44,7 @@ const BacLineChart = ({data, colors}) => {
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="25" vertical={false}/>
             <XAxis dataKey="year" tickLine={false} tickMargin={20}/>
-            <YAxis type="number" axisLine={false} tickLine={false} ticks={[0, 600, 900, 1200, 1500, 1800, 2100]} tickMargin={20}/>
+            <YAxis type="number" axisLine={false} ticks={ticks} tickLine={false} tickMargin={20}/>
             <Tooltip cursor={{ stroke: 'red', strokeWidth: 2 }} />
             <Line type="basic" dataKey="Lille" stroke={colors['Lille']} strokeWidth={3} dot={false} animationDuration={2000} />
             <Line type="basic" dataKey="Marseille" stroke={colors['Marseille']} strokeWidth={3} dot={false} animationDuration={2000} />
@@ -46,11 +53,12 @@ const BacLineChart = ({data, colors}) => {
             <Line type="basic" dataKey="Lyon" stroke={colors['Lyon']} strokeWidth={3} dot={false} animationDuration={2000} />
             <Line type="basic" dataKey="Nancy" stroke={colors['Nancy']} strokeWidth={3} dot={false} animationDuration={2000} />
             <Line type="basic" dataKey="Paris" stroke={colors['Paris']} strokeWidth={3} dot={false} animationDuration={2000} />
+            <Line type="basic" dataKey="Moyenne" stroke={colors['Moyenne']} strokeWidth={3} dot={false} animationDuration={2000} />
           </LineChart>
         </ResponsiveContainer>
       </Col>
       <Col>
-        <Indicators data={dataInd} colmun={false} colors={colorsInd}  displayValue={false}/>
+        <Indicators data={dataInd} colmun={false} colors={colorsInd} displayValue={false}/>
       </Col>
     </StyledRow>
   );

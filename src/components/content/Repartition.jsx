@@ -5,7 +5,7 @@ import BacPieChart from './dash/sub-dash/BacPieChart';
 import BacTable from './dash/sub-dash/BacTable';
 import BacBarChart from './dash/sub-dash/BacBarChart';
 import { sumData } from 'utils';
-import { barColors, barLabels, dataBarChart, dataPie1, dataTableHead1, dataTableRepar1, pieColors1 } from 'utils/data';
+import { barColors, barLabels, dataBarChart, dataPie, dataTableHead, dataTableRepar, pieColors } from 'utils/data/repartition';
 
 const Repartition = () => {
 
@@ -14,7 +14,7 @@ const Repartition = () => {
       <Row className='page-row-1'>
         <Col md="6">
           <Dash title="Répartition Anomalies (2022)">
-            <BacPieChart data={dataPie1} colors={pieColors1} displayValue={false} />
+            <BacPieChart data={dataPie} colors={pieColors} displayValue={false} />
           </Dash>
         </Col>
         <Col md="6">
@@ -26,7 +26,7 @@ const Repartition = () => {
       <Row className='page-row-2'>
         <Col md="6">
           <Dash title="Répartition Anomalies par centre et par catégorie (2022)">
-            <BacTable data={[...dataTableRepar1, sumData(dataTableRepar1)]} dataHead={dataTableHead1}/>
+            <BacTable data={[...dataTableRepar, sumData(dataTableRepar)]} dataHead={dataTableHead}/>
           </Dash>
         </Col>
       </Row>

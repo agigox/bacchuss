@@ -15,7 +15,7 @@ import {
   dataMaterialFMBT,
   dataMaterialFMNS,
   pieColorsMaterialFM,
-} from "utils/data";
+} from "utils/data/material";
 
 const Material = () => {
   return (
