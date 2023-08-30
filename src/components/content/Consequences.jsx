@@ -13,7 +13,7 @@ import {
   dataTableHeadC,
   dataTableReparC,
   pieColorsCAnomaly,
-} from "utils/data";
+} from "utils/data/consequences";
 
 const Consequences = () => {
   return (
